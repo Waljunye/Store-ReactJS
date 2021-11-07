@@ -35,7 +35,23 @@ module.exports = {
                     presets: ['@babel/preset-env', '@babel/preset-react']
                 }
             },
-        }],
+        },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[name]__[local]--[hash:base64:5]'
+                            }
+                        }
+                    }]
+
+            }
+        ],
     },
     devtool: NODE_ENV === 'development'? 'eval': false,
     plugins: NODE_ENV === 'development'?[new HotModuleReplacementPlugin(), new CleanWebpackPlugin()] : []

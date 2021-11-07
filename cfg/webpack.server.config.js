@@ -23,13 +23,26 @@ module.exports = {
     module: {
         rules: [{
             test: /\.[tj]sx?$/,
-            use: {
+            use: [{
                 loader: "babel-loader",
                 options: {
                     presets: ['@babel/preset-env', '@babel/preset-react']
                 }
-            },
-        }],
+            }]}, {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[name]__[local]--[hash:base64:5]',
+                            },
+                        }
+                    }]
+
+                }],
     },
     mode: NODE_ENV ? NODE_ENV : 'development',
     optimization: {
