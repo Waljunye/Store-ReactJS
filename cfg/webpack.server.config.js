@@ -28,10 +28,12 @@ module.exports = {
                 options: {
                     presets: ['@babel/preset-env', '@babel/preset-react']
                 }
-            }]}, {
-                test: /\.css$/,
+            }
+            ],
+        },
+            {
+                test: /\.css$/i,
                 use: [
-                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {

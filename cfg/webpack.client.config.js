@@ -37,7 +37,7 @@ module.exports = {
             },
         },
             {
-                test: /\.css$/,
+                test: /\.css$/i,
                 use: [
                     'style-loader',
                     {
@@ -45,8 +45,8 @@ module.exports = {
                         options: {
                             modules: {
                                 mode: 'local',
-                                localIdentName: '[name]__[local]--[hash:base64:5]'
-                            }
+                                localIdentName: '[name]__[local]--[hash:base64:5]',
+                            },
                         }
                     }]
 
