@@ -47,6 +47,7 @@ module.exports = {
                                 mode: 'local',
                                 localIdentName: '[name]__[local]--[hash:base64:5]',
                             },
+                            sourceMap: true
                         }
                     }]
 

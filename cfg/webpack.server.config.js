@@ -40,6 +40,7 @@ module.exports = {
                             modules: {
                                 mode: 'local',
                                 localIdentName: '[name]__[local]--[hash:base64:5]',
+                                exportOnlyLocals: true,
                             },
                         }
                     }]
